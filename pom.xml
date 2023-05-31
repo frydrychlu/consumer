@@ -36,6 +36,38 @@
             <artifactId>httpclient</artifactId>
             <version>4.5.14</version>
         </dependency>
+        <dependency>
+            <groupId>au.com.dius</groupId>
+            <artifactId>pact-jvm-consumer-junit5</artifactId>
+            <version>4.0.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.8.0</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>au.com.dius.pact.provider</groupId>
+                <artifactId>maven</artifactId>
+                <version>4.3.0</version>
+                <configuration>
+                    <pactDirectory>E:\pasja\Pact\PoC\PactPoCConsumer\target\pacts\Consumer-Provider.json</pactDirectory>
+                    <pactBrokerUrl>http://localhost:9292</pactBrokerUrl> <!-- Replace with your Pact Broker URL -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
