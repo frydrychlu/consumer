@@ -47,7 +47,7 @@ public class ProviderTest {
 
     @PactTestFor(providerName = "Provider", port = "1234") // Use a random unused port
     @Test
-    void testOnConsumerSide(MockServer mockServer) throws IOException, URISyntaxException, InterruptedException {
+    void testOnConsumerSide(MockServer mockServer) throws IOException, URISyntaxException {
         ObjectMapper objectMapper = new ObjectMapper();
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpGet request = new HttpGet(new URI(mockServer.getUrl() + "/product/Pepsi"));
